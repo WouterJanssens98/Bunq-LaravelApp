@@ -41,6 +41,12 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
+
+                        <a class="navbar-brand" href="{{__('header.change')}}">
+                            <img src="{{ asset(__('header.image')) }}" width="30" height="30" alt="" loading="lazy">
+                        </a>
+
+
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">

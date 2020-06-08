@@ -5,6 +5,7 @@
     <div class="row">
         <div class="col-12">
             <a class="btn btn-warning" href="{{route('dashboard.pages.create')}}"> Add page</a>
+            <a class="btn btn-warning" href="{{route('admin.news')}}"> Edit news pages</a>
             <a class="btn btn-warning" href="{{route('home')}}"> Back to homepage</a>
         </div>
     </div>
@@ -16,11 +17,11 @@
                         @if(app()->getlocale() == 'nl')
                         <th width="200">Titel</th>
                         <th width="200">Introductie</th>
-                        <th width="200"></th>
+                        <th width="200">Actie</th>
                         @else
                         <th width="200">Title</th>
                         <th width="200">Introduction</th>
-                        <th width="200"></th>
+                        <th width="200">Actions</th>
                         @endif
                     </tr>
                 </thead>

@@ -1,4 +1,4 @@
-@extends('layout.layout')
+@extends('layouts.app')
 
 @section('content')
 <div class="container mt-5">
@@ -28,18 +28,21 @@
                     <td> </td>
                     <td> {{ $post->en_intro}} </td>
                     <td> {{  $post->en_text}} </td>
-                    <td> <a class="hollow button error" href="{{ route('admin.deleteNews', $post->id)}}">VERWIJDER</a>
-                        <a class="hollow button error" href="{{ route('admin.editNews', $post->id)}}">BEWERK</a>
+                    <td>
+                        <a class="hollow button error" href="{{ route('admin.editNews', $post->id)}}">EDIT</a>
+                        <a class="hollow button error" href="{{ route('admin.deleteNews', $post->id)}}">DELETE</a>
+
                     </td>
                 </tr>
                 @elseif(app()->getlocale() == 'nl')
                 <tr  class="newsRow mt-1 mb-1">
                     <td> </td>
                     <td> {{ $post->nl_intro}} </td>
-                    <td> {{  $post->nl_text}} </td>
+                    <td> {{ $post->nl_text}} </td>
                     <td>
-                        <a class="hollow button error" href="{{ route('admin.deleteNews', $post->id)}}">VERWIJDER</a>
                         <a class="hollow button error" href="{{ route('admin.editNews', $post->id)}}">BEWERK</a>
+                        <a class="hollow button error" href="{{ route('admin.deleteNews', $post->id)}}">VERWIJDER</a>
+
                     </td>
                 </tr>
                 @endif

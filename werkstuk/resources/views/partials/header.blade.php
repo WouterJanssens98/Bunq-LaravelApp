@@ -38,6 +38,20 @@
                             </li>
 
                             @if(app()->getlocale() == 'nl')
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('donations') }}">Donaties</a>
+                            </li>
+                            @elseif(app()->getlocale() == 'en')
+                            <li class="nav-item">
+                                <a class="nav-link"href="{{ route('donations') }}">Donations</a>
+                            </li>
+                            @endif
+
+
+
+
+
+                            @if(app()->getlocale() == 'nl')
                                 @foreach($pages as $page)
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('page', $page->slug) }}">{{ $page->title_nl }}</a>

@@ -1,10 +1,19 @@
-@extends('layout.layout')
+@extends('layouts.app')
 
 @section('content')
 <div class="container">
     <div class="row">
 
         <div class="medium-12 large-12 columns">
+
+            <div class="col-12">
+                @if(app()->getlocale() == 'en')
+                <a class="btn btn-warning" href="{{route('admin.news')}}">Back to news overview</a>
+                @elseif(app()->getlocale() == 'nl')
+                <a class="btn btn-warning" href="{{route('admin.news')}}">Terug naar nieuwsoverzicht</a>
+                @endif
+            </div>
+
             <h4 class="mt-5">
                 @if(app()->getlocale() == 'en')
                 Edit News Post
@@ -12,6 +21,7 @@
                 Bewerk Nieuws Post
                 @endif
             </h4>
+
             <div class="medium-2 columns">
                 @if(app()->getlocale() == 'en')
                 Post {{$id}}
