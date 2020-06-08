@@ -3,19 +3,36 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Mollie\Laravel\Facades\Mollie;
+use App\Donation;
+use App\Page;
 class ShopController extends Controller
 {
 
     public function getSuccess() {
 
+    $pages = Page::where('active', 1)->get();
 
-        dd('Betaling wordt verwerkt!');
 
+    return view('donations.donation_success', [
+        'pages' => $pages
+            ]);
     }
 
 
     public function preparePayment(Request $r)
     {
+        $data = [
+            'name' => $r->name,
+            'email' => $r->email,
+            'description' => $r->description,
+            'value' => $r->amount,
+            'visible' => $r->active
+
+        ];
+
+        Donation::create($data);
+
+
         $payment = Mollie::api()->payments()->create([
             "amount" => [
                 "currency" => "EUR",

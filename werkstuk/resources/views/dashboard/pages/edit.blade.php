@@ -41,8 +41,8 @@
                 <div class="form-group">
                     <label for="active">Active</label>
                     <select name="active"class="form-control" id="active">
-                        <option @if($page->active) selected @endif value="0">Visible</option>
-                        <option @if(!$page->active) selected @endif  value="1">Not visible</option>
+                        <option @if($page->active) selected @endif value="1">Visible</option>
+                        <option @if(!$page->active) selected @endif  value="0">Not visible</option>
                     </select>
                 </div>
 

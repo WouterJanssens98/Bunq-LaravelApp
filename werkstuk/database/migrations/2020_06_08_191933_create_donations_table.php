@@ -20,6 +20,7 @@ class CreateDonationsTable extends Migration
             $table->string('email');
             $table->string('description');
             $table->string('value');
+            $table->string('visible');
 
         });
     }

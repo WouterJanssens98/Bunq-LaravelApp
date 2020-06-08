@@ -10,7 +10,7 @@ class ContactController extends Controller
 {
     public function getIndex() {
 
-        $pages = Page::all();
+        $pages = Page::where('active', 1)->get();
         $title = 'Contact Page';
 
         return view('pages.contact' , [
@@ -22,7 +22,7 @@ class ContactController extends Controller
 
     public function postContact(Request $r) {
 
-        $pages = Page::all();
+        $pages = Page::where('active', 1)->get();
         $data = [
             'name' => $r->name,
             'email' => $r->email,

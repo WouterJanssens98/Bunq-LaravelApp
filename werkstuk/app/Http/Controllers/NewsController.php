@@ -9,7 +9,7 @@ class NewsController extends Controller
 
 
     public function getIndex() {
-        $pages = Page::all();
+        $pages = Page::where('active', 1)->get();
 
         return view('pages.news' , [
             'posts' => News::paginate(5),
@@ -19,7 +19,7 @@ class NewsController extends Controller
 
     public function getDetail(News $id) {
 
-        $pages = Page::all();
+        $pages = Page::where('active', 1)->get();
 
         return view('pages.detail' , [
             'post' => $id,

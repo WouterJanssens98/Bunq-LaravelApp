@@ -11,7 +11,7 @@ class HomeController extends Controller
     public function getIndex() {
 
 
-        $pages = Page::all();
+        $pages = Page::where('active', 1)->get();
 
         return view('pages.home', [
             'pages' => $pages

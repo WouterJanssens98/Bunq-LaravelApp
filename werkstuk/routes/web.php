@@ -19,10 +19,10 @@ Route::name('webhooks.mollie')->post('webhooks/mollie', 'WebHookController@handl
 
 Route::get('/home', 'HomeController@getIndex')->name('home');
 
-Route::get('/success', 'ShopController@getSuccess')->name('paymentSuccess');
-
+Route::get('/donation/success', 'ShopController@getSuccess')->name('paymentSuccess');
 Route::get('/donations', 'DonationController@getIndex')->name('donations');
-Route::post('/donations', 'ShopController@preparePayment')->name('donations.pay');
+Route::get('/donations/create', 'DonationController@createDonation')->name('donations.create');
+Route::post('/donations/create', 'ShopController@preparePayment')->name('donations.pay');
 
 Route::get('/', function () {
     return redirect('/home');

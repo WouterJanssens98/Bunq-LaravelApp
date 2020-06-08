@@ -9,7 +9,7 @@ class PagesController extends Controller
 {
     public function getPage($slug){
 
-        $pages = Page::all();
+        $pages = Page::where('active', 1)->get();
 
         $page = Page::where('slug', $slug)->first();
         if(!$page) abort('404');

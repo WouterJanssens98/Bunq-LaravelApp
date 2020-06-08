@@ -5,7 +5,13 @@
 
 <div class="row">
     <div class="col-12 text-center mt-3">
-        <h2>Donations</h2>
+        <h1>
+            @if(app()->getlocale() == 'en')
+            Donations
+            @elseif (app() -> getlocale() == 'nl')
+            Donaties
+            @endif
+        </h1>
     </div>
 </div>
 
@@ -17,7 +23,7 @@
         @csrf
 
         <div class="form-group">
-            <label for="name">@lang('contact.field4')</label>
+            <label for="name" >@lang('contact.field4')</label>
             <input name="name" type="text" class="form-control" id="name">
         </div>
 
@@ -40,8 +46,8 @@
         <div class="form-group">
             <label for="active">Visible</label>
             <select name="active"class="form-control" id="active">
-                <option value="visible">Visible</option>
-                <option value="invisible">Not visible</option>
+                <option value="1">Visible</option>
+                <option value="0">Not visible</option>
             </select>
         </div>
 

@@ -65,14 +65,12 @@ class DashboardController extends Controller
             $id->nl_intro = $r->nl_intro;
             $id->nl_text = $r->nl_text;
             $id->nl_content = $r->nl_content;
-
             $id->save();
 
         }elseif($r->language == "en"){
             $id->en_intro = $r->en_intro;
             $id->en_text = $r->en_text;
             $id->en_content = $r->en_content;
-
             $id->save();
 
         }else{
@@ -146,6 +144,7 @@ class DashboardController extends Controller
         $page->content_en = $r->content_en;
         $page->content_nl = $r->content_nl;
         $page->template = $r->template;
+        $page->active = $r->active;
 
         $page->save();
 
