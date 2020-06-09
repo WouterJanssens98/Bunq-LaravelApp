@@ -19,7 +19,7 @@
 <div class="col-12 mt-5">
     <h3>Make donation</h3>
 
-<form action="{{ route('donations.pay')}}" method="post">
+    <form action="{{ route('donations.pay')}}" method="post">
         @csrf
 
         <div class="form-group">

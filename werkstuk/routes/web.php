@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\NewsletterController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 /*
@@ -23,6 +24,10 @@ Route::get('/donation/success', 'ShopController@getSuccess')->name('paymentSucce
 Route::get('/donations', 'DonationController@getIndex')->name('donations');
 Route::get('/donations/create', 'DonationController@createDonation')->name('donations.create');
 Route::post('/donations/create', 'ShopController@preparePayment')->name('donations.pay');
+
+Route::post('/newsletter', 'NewsletterController@postSubscribe')->name('newsletter');
+
+
 
 Route::get('/', function () {
     return redirect('/home');
