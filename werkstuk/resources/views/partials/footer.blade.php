@@ -1,17 +1,12 @@
-<div class="row">
-    <div class="col-12 text-center mt-3">
-        <hr>
-        <p> Copyright Bunq {{ date('Y') }}</p>
 
-    </div>
-</div>
 
 
 <div class="col-6 offset-md-3   text-center mt-1">
 
 
-    <div class="column mb-5">
-        <div class="container">
+    <div class="column mb-1">
+        <div class="container mt-2">
+            <hr>
             <h4 class="text-center">
                 @if(app()->getlocale() == 'en')
                 Subscribe to newsletter
@@ -37,6 +32,16 @@
         </div>
     </div>
 </div>
+
+<div class="row">
+    <div class="col-12 text-center mt-3">
+        <hr>
+        <p> Copyright Bunq {{ date('Y') }}</p>
+
+    </div>
+</div>
+
+
 <script src="{{asset('js/app.js')}}"></script>
 </body>
 

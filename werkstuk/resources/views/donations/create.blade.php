@@ -17,7 +17,13 @@
 
 <div class="container">
 <div class="col-12 mt-5">
-    <h3>Make donation</h3>
+    <h3>
+        @if(app()->getlocale() == 'en')
+        Make donation
+        @elseif (app() -> getlocale() == 'nl')
+        Doe een donatie
+        @endif
+    </h3>
 
     <form action="{{ route('donations.pay')}}" method="post">
         @csrf
@@ -39,15 +45,39 @@
 
 
         <div class="form-group">
-            <label for="amount">Amount</label>
+            <label for="amount">
+                @if(app()->getlocale() == 'en')
+                Amount
+                @elseif (app() -> getlocale() == 'nl')
+                Bedrag
+                @endif
+            </label>
             <input name="amount" type="value" class="form-control" id="amount">
         </div>
 
         <div class="form-group">
-            <label for="active">Visible</label>
+            <label for="active">
+                @if(app()->getlocale() == 'en')
+                Visible
+                @elseif (app() -> getlocale() == 'nl')
+                Zichtbaar
+                @endif
+            </label>
             <select name="active"class="form-control" id="active">
-                <option value="1">Visible</option>
-                <option value="0">Not visible</option>
+                <option value="1">
+                    @if(app()->getlocale() == 'en')
+                    Visible
+                    @elseif (app() -> getlocale() == 'nl')
+                    Zichtbaar
+                    @endif
+                </option>
+                <option value="0">
+                    @if(app()->getlocale() == 'en')
+                    Invisible
+                    @elseif (app() -> getlocale() == 'nl')
+                    Onzichtbaar
+                    @endif
+                </option>
             </select>
         </div>
 
