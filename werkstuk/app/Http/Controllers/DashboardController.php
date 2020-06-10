@@ -8,6 +8,7 @@ use Illuminate\Support\Str;
 
 use App\News;
 use App\Page;
+use App\Donation;
 class DashboardController extends Controller
 {
     public function getIndex() {
@@ -87,7 +88,10 @@ class DashboardController extends Controller
         $pages = Page::all();
 
         return view('dashboard.pages.index', [
-            'pages' => $pages
+            'pages' => $pages,
+            'pagesCount' => Page::all()->count(),
+            'donationCount' => Donation::all()->count(),
+            'newspagesCount' => News::all()->count()
         ]);
     }
 
